@@ -1,6 +1,9 @@
 /*
 If I understand the time complexities correctly than each of the below functions has a
-runtime of O(n), because they all consist of a single for loop.  
+runtime of O(n*log(n)) because each one is a for loop with a nested if statement that 
+uses a small set of data. I believe while the map.has() is not a loop function, in a 
+practical application with large sets of data it may functionally act as a loop. Which 
+would make the worst case scenario and the appropriate runtime to use as an estimate O(n^2). 
 */
 
 /* 1) Sum Zero */
