@@ -1,0 +1,31 @@
+Array Size         |  doublerInsert  |  doublerAppend
+                   |                 |
+extraLargeArray    |  1.0339959 s    |  2.7688 ms
+largeArray         |  8.8365 ms      |  640 μs
+mediumArray        |  183.7 μs       |  133.4 μs
+smallArray         |  76.3 μs        |  100.9 μs
+tinyArray          |  38.4 μs        |  89.3 μs
+
+Insert array takes quite a bit more time to execute than
+append, except for very small numbers - some point between
+array size 100 and 1000 insert starts working more effeciently
+than append.   
+
+Extra Credit: 
+
+From what I can tell from a google search the reason 
+append acts quicker than insert is due to how an array 
+works on your memory. When an array is first created on your
+computer it designates space for the full array right away.
+When it sees that the array is going to run out of room it 
+then copies over the data to a newly create array with more
+at the "top" of the array. Insert takes longer because you 
+are displacing all of the elements in the array immediately,
+instead of filling in the array from the top. When your
+computer realizes that the all the elements in the array are
+going to be displaced higher it knows right away that it will
+need a larger array, as the last element has been displaced by
+the number of items inserted. Everytime you use insert it 
+copies the old array to a new larger array vs. inserting 
+which waits for the array to grow to a certain size before
+copying to a new array.
